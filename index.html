@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>View item on eBay</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1258266788671216');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_META_PIXEL_ID&ev=PageView&noscript=1"/></noscript>
+
+  <!-- TikTok Pixel -->
+  <script>
+    !function (w, d, t) {
+      w.TiktokAnalyticsObject=t;var tt=w[t]=w[t]||[];tt.methods=[
+      'page','track','identify','instances','debug','on','off','once','ready','alias','group','enableCookie','disableCookie'],
+      tt.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};
+      for(var i=0;i<tt.methods.length;i++)tt.setAndDefer(tt,tt.methods[i]);
+      tt.instance=function(t){var e=tt._i[t]||[];for(var n=0;n<tt.methods.length;n++)
+      tt.setAndDefer(e,tt.methods[n]);return e};tt.load=function(e,n){
+      var i='https://analytics.tiktok.com/i18n/pixel/events.js';
+      tt._i=tt._i||{};tt._i[e]=[];tt._i[e]._u=i;tt._t=tt._t||{};tt._t[e]=+new Date;
+      var o=d.createElement('script');o.type='text/javascript';o.async=!0;o.src=i;
+      var a=d.getElementsByTagName('script')[0];a.parentNode.insertBefore(o,a)};
+      tt.load('YOUR_TIKTOK_PIXEL_ID'); tt.page();
+    }(window, document, 'ttq');
+  </script>
+
+  <!-- Google Analytics 4 (optional) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date()); gtag('config', 'G-XXXXXXX');
+  </script>
+
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin:0; padding:2rem; display:grid; place-items:center; min-height:100vh; background:#f7f7f7; }
+    .card { max-width:520px; padding:1.5rem; border-radius:12px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,.06); text-align:center; }
+    .btn { display:inline-block; padding:0.9rem 1.2rem; border-radius:10px; text-decoration:none; font-weight:700; border:1px solid #222; background:#111; color:#fff; }
+    p.small { font-size:12px; color:#666; margin-top:0.8rem; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Special Offer — View on eBay</h1>
+    <p>Click the button below to open the item on eBay.</p>
+    <a id="cta" class="btn" href="https://www.ebay.com/str/everydayessentialsusa" target="_blank" rel="noopener">View on eBay</a>
+    <p class="small">We use analytics to improve ads and measure performance.</p>
+  </div>
+
+  <script>
+    const cta = document.getElementById('cta');
+    cta.addEventListener('click', function(){
+      if (typeof fbq === 'function') { fbq('trackCustom', 'OutboundClick', {dest:'ebay'}); }
+      if (typeof ttq === 'object' && ttq.track) { ttq.track('ClickButton'); }
+      if (typeof gtag === 'function') { gtag('event', 'outbound_click', { destination: 'ebay' }); }
+    });
+  </script>
+</body>
+</html>
